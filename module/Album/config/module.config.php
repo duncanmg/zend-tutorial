@@ -2,6 +2,7 @@
 namespace Album;
 
 use Zend\Router\Http\Segment;
+use Zend\Navigation\ConfigProvider;
 
 return [
     'router' => [
@@ -27,4 +28,5 @@ return [
             'album' => __DIR__ . '/../view',
         ],
     ],
+    'service_manager' => (new ConfigProvider())->getDependencyConfig(),
 ];

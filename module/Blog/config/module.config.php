@@ -18,7 +18,7 @@ return [
     'controllers' => [
         'factories' => [
             Controller\ListController::class => Factory\ListControllerFactory::class,
-            # Model\ZendDbSqlRepository::class => Factory\ZendDbSqlRepositoryFactory::class,
+            Controller\WriteController::class => Factory\WriteControllerFactory::class,
         ],
     ],
     // This lines opens the configuration for the RouteManager
@@ -51,6 +51,16 @@ return [
                             ],
                             'constraints' => [
                                 'id' => '[1-9]\d*',
+                            ],
+                        ],
+                    ],
+                    'add' => [
+                        'type' => Literal::class,
+                        'options' => [
+                            'route'    => '/add',
+                            'defaults' => [
+                                'controller' => Controller\WriteController::class,
+                                'action'     => 'add',
                             ],
                         ],
                     ],

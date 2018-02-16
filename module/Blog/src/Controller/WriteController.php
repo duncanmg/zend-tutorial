@@ -45,7 +45,7 @@ class WriteController extends AbstractActionController
         }
     
         $post = $this->form->getData();
-    
+
         try {
             $post = $this->command->insertPost($post);
         } catch (\Exception $ex) {
@@ -60,3 +60,4 @@ class WriteController extends AbstractActionController
         );
     }
 }
+

@@ -13,3 +13,4 @@ class ZendDbSqlCommandFactory implements FactoryInterface
         return new ZendDbSqlCommand($container->get(AdapterInterface::class));
     }
 }
+

@@ -9,7 +9,6 @@ return [
     'service_manager' => [
         'aliases' => [
             Model\PostRepositoryInterface::class => Model\ZendDbSqlRepository::class,
-            Model\PostCommandInterface::class => Model\PostCommand::class,
             Model\PostCommandInterface::class => Model\ZendDbSqlCommand::class,
         ],
         'factories' => [
@@ -22,8 +21,7 @@ return [
     'controllers' => [
         'factories' => [
             Controller\ListController::class => Factory\ListControllerFactory::class,
-            Controller\WriteController::class => Factory\WriteControllerFactory::class
-            # Model\ZendDbSqlRepository::class => Factory\ZendDbSqlRepositoryFactory::class,
+            Controller\WriteController::class => Factory\WriteControllerFactory::class,
         ],
     ],
     // This lines opens the configuration for the RouteManager

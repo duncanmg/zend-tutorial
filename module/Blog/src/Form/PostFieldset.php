@@ -10,16 +10,9 @@ class PostFieldset extends Fieldset
 {
     public function init()
     {
+
         $this->setHydrator(new ReflectionHydrator());
         $this->setObject(new Post('', ''));
-
-        $this->add([
-            'name' => 'post',
-            'type' => PostFieldset::class,
-            'options' => [
-                'use_as_base_fieldset' => true,
-            ],
-        ]);
 
         $this->add([
             'type' => 'hidden',

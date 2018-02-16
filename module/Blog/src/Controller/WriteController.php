@@ -31,6 +31,9 @@ class WriteController extends AbstractActionController
 
     public function addAction()
     {
+        return new ViewModel([
+            'form' => $this->form,
+        ]);
     }
 }
 

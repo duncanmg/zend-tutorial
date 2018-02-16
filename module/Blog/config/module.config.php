@@ -9,10 +9,12 @@ return [
     'service_manager' => [
         'aliases' => [
             Model\PostRepositoryInterface::class => Model\ZendDbSqlRepository::class,
+            Model\PostCommandInterface::class => Model\PostCommand::class,
         ],
         'factories' => [
             Model\PostRepository::class => InvokableFactory::class,
             Model\ZendDbSqlRepository::class => Factory\ZendDbSqlRepositoryFactory::class,
+            Model\PostCommand::class => InvokableFactory::class,
         ],
     ],
     'controllers' => [
